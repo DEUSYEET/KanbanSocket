@@ -4,11 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socket.IO Chatroom</title>
+    <link href="./style.css" rel="stylesheet" />
+    <title>Socket.IO Kanban Chat</title>
 </head>
 
 <body>
-    <h1>Hello There!</h1>
+    <div id="chat">
+        <div id="prev-message-container"></div>
+        <form id="message-form">
+            <input id="message-input" type="text"/>
+            <button type="submit">Send</button>
+        </form>
+    </div>
 
     <!-- TODO update URL to be consistent with AWS -->
     <!-- Fetches public Socket.IO dependency -->
