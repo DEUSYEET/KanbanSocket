@@ -45,9 +45,9 @@ formDOM.addEventListener('submit', evt => {
     socket.emit('chat-message', message);
 });
 
-// Receive a message from the server
-socket.on('chat-message', body => {
-    displayMessage(body.user, body.message);
+//Socket.IO
+socket.on('chat-message', data => {
+    displayMessage(data.user,data.message);
 })
 
 // Receive a plain message from the server
