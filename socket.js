@@ -1,9 +1,10 @@
 module.exports = io => {
-    users = {}
+    let users = {};
 
     io.on('connect', socket => {
         socket.on('user-connect', user => {
-            users[socket.id] = user
+            users[socket.id] = user;
+            io.sockets.emit('user-connect', `${user} connected`)
         });
 
         socket.on('chat-message', message => {
