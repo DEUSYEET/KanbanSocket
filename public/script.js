@@ -7,11 +7,16 @@ const messagesDOM = document.getElementById('message-container');
 const inputDOM = document.getElementById("message-input");
 const formDOM = document.getElementById('message-form');
 
+var userColor;
+
 let displayMessage = (user, message, local = false) => {
     let messageDOM = document.createElement('div');
 
     let userDOM = document.createElement('span');
-    if(local) userDOM.className = 'local';
+    if(local) { 
+        userDOM.className = 'local';
+        userDOM.style.color = userColor; 
+    }
     userDOM.innerText = user;
     messageDOM.append(userDOM);
 
@@ -33,6 +38,8 @@ let displayServerMessage = message => {
 // TODO replace with accounts?
 const user = prompt('Welcome! Please enter a username');
 socket.emit('user-connect', user);
+const color = prompt('Enter a hexcode color for your name!');
+userColor = color;
 
 formDOM.addEventListener('submit', evt => {
     evt.preventDefault();
@@ -48,7 +55,7 @@ formDOM.addEventListener('submit', evt => {
 
 //Socket.IO
 socket.on('chat-message', data => {
-    displayMessage(data.user,data.message);
+    displayMessage(data.user, data.message, data.user == user);
 })
 
 // Receive a plain message from the server
