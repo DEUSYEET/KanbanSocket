@@ -7,6 +7,10 @@ const messagesDOM = document.getElementById('prev-message-container');
 const inputDOM = document.getElementById("message-input");
 const formDOM = document.getElementById('message-form');
 
+formDOM.onsubmit = (e) => {
+    e.preventDefault();
+}
+
 let displayMessage = (user, message, local = false) => {
     let messageDOM = document.createElement('div');
 
@@ -30,10 +34,10 @@ let displayServerMessage = message => {
 
 const user = prompt('Welcome! Please enter a username');
 socket.emit('user-connect',user);
-displayMessage('You connected');
+// displayMessage("Server", user + ' connected');
 
 //Socket.IO
-socket.on('chat-message',message => {
+socket.on('chat-message', data => {
     displayMessage(data.user,data.message);
 })
 
