@@ -8,7 +8,7 @@ module.exports = io => {
         });
 
         socket.on('chat-message', message => {
-            io.sockets.emit('chat-message', {
+            socket.broadcast.emit('chat-message', {
                 user: users[socket.id],
                 message
             });

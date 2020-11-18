@@ -43,6 +43,7 @@ formDOM.addEventListener('submit', evt => {
 
     // Send message to server
     socket.emit('chat-message', message);
+    displayMessage(user, message, true);
 });
 
 //Socket.IO
