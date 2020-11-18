@@ -10,16 +10,16 @@
 
 <body>
     <div id="chat">
-        <div id="prev-message-container"></div>
+        <div id="message-container"></div>
         <form id="message-form">
-            <input id="message-input" type="text"/>
+            <input id="message-input" type="text" autocomplete="off" placeholder="Send a message..."/>
             <button type="submit">Send</button>
         </form>
     </div>
 
     <!-- Fetches public Socket.IO dependency -->
-    <!-- <script defer src="http://localhost:3000/socket.io/socket.io.js"></script> -->
-    <script defer src="http://kanbansocket.us-west-1.elasticbeanstalk.com/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <!-- <script defer src="http://kanbansocket.us-west-1.elasticbeanstalk.com/socket.io/socket.io.js"></script> -->
     <script defer src="./script.js"></script>
 </body>
 

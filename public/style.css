@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* font-family: 'Josefin Sans', sans-serif; */
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EEE;
+}
+
+#chat {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#message-container {
+    margin: 0 5vw 0 5vw;
+    padding-bottom: 10px;
+    font-size: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+#message-container div {
+    padding: 10px;
+    background-color: aliceblue;
+    overflow-wrap: break-word;
+}
+#message-container div:nth-last-child(2n) {
+    background-color: white;
+}
+
+#message-container div span {
+    color: red;
+}
+#message-container div span.local {
+    color: blue;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 5vw 10px 5vw;
+    box-shadow: 0 0 6px 3px #CCC;
+}
+form input {
+    height: 40px;
+    padding: 0 15px 0 15px;
+    flex-grow: 1;
+    border-radius: 20px;
+    border: 0;
+    outline-width: 0;
+}
+form input:focus {
+    box-shadow: 0 0 0 2px #0080FF;
+}
+form button {
+    box-shadow: none;
+    width: 80px;
+    margin-left: 10px;
+    background-color: #0080FF;
+    cursor: pointer;
+    border: 0;
+    border-radius: 20px;
+    font-family: inherit;
+    color: white;
+}
+form button:hover {
+    background-color: #126FE0;
+}
+form button:focus {
+    outline-width: 0;
+    box-shadow: 0 0 0 2px #126FE0;
+}
+
+input,
+form button {
+    box-shadow: 0 3px 6px #CCC;
+}
