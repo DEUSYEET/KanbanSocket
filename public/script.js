@@ -1,6 +1,6 @@
 // Uses socket.io.js (index.html) to make a connection with the server
-const socket = io('http://localhost:3000');
-// const socket = io('http://kanbansocket.us-west-1.elasticbeanstalk.com');
+// const socket = io('http://localhost:3000');
+const socket = io('http://kanbansocket.us-west-1.elasticbeanstalk.com');
 
 // HTML elements
 const messagesDOM = document.getElementById('message-container');
