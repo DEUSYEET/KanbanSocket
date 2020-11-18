@@ -45,10 +45,10 @@ body {
     background-color: white;
 }
 
-/* #message-container div span {
+#message-container div span {
     color: red;
 }
-#message-container div span.local {
+/*#message-container div span.local {
     color: blue;
 } */
 
