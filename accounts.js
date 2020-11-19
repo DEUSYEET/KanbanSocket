@@ -3,8 +3,10 @@ let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose
   .connect(
-    "mongodb+srv://root:GRHSNOuDazb37S4j@guia0.evfpg.mongodb.net/guides?retryWrites=true&w=majority"
-  )
+    "mongodb+srv://root:GRHSNOuDazb37S4j@guia0.evfpg.mongodb.net/guides?retryWrites=true&w=majority", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+  })
   .catch((error) => console.log("error"));
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
