@@ -43,7 +43,8 @@ exports.createAccount = (req, res) => {
       if (err) {
         res.json(err);
       } else {
-        res.json(result);
+        // res.json(result);
+        res.redirect("/login")
       }
     }
   );
