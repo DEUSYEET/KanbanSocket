@@ -6,8 +6,21 @@ const socket = io('http://kanbansocket.us-west-1.elasticbeanstalk.com');
 const messagesDOM = document.getElementById('message-container');
 const inputDOM = document.getElementById("message-input");
 const formDOM = document.getElementById('message-form');
+const urlString = window.location.search;
+const params = new URLSearchParams(urlString);
+console.log(params.get("login"))
 
+var user;
 var userColor;
+
+if(params.get("login")){
+    user = params.get("username") 
+    userColor="#"+params.get("color");
+    console.log(userColor)
+} else {
+    user = prompt('Welcome! Please enter a username');
+    userColor = prompt('Enter a hexcode color for your name!');
+}
 
 let displayMessage = (user, message, local = false) => {
     let messageDOM = document.createElement('div');
@@ -36,11 +49,8 @@ let displayServerMessage = message => {
 
 // Get username on connect
 // TODO replace with accounts?
-const user = prompt('Welcome! Please enter a username');
-socket.emit('user-connect', user);
-const color = prompt('Enter a hexcode color for your name!');
-userColor = color;
 
+socket.emit('user-connect', user);
 formDOM.addEventListener('submit', evt => {
     evt.preventDefault();
 

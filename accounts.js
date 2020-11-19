@@ -69,11 +69,12 @@ exports.login = (req, res) => {
       res.json(err);
     } else {
       if (result.password === loginUser.password) {
-        res.json({
-          login: true,
-          username: result.username,
-          color: result.color,
-        });
+        // res.json({
+        //   login: true,
+        //   username: result.username,
+        //   color: result.color,
+        // });
+        res.redirect("/?username="+result.username+"&color="+result.color.replace("#","")+"&login=true");
       } else{
         res.json({
             login: false,
