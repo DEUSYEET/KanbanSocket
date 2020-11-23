@@ -3,7 +3,6 @@ const app = express();
 const accounts = require('./accounts');
 const bodyParser = require('body-parser');
 
-
 // Express piggy-backs off http or https. This allows Socket.IO integration
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
