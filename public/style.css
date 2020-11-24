@@ -69,7 +69,13 @@ form input {
 form input:focus {
     box-shadow: 0 0 0 2px #0080FF;
 }
+form .button,
 form button {
+    /* form .button specific */
+    text-decoration: none;
+    line-height: 40px; /* form input height */
+    text-align: center;
+    /* form button specific */
     box-shadow: none;
     width: 80px;
     margin-left: 10px;
@@ -80,15 +86,18 @@ form button {
     font-family: inherit;
     color: white;
 }
+form .button:hover,
 form button:hover {
     background-color: #126FE0;
 }
+form .button:focus,
 form button:focus {
     outline-width: 0;
     box-shadow: 0 0 0 2px #126FE0;
 }
 
 input,
+form .button,
 form button {
     box-shadow: 0 3px 6px #CCC;
 }
